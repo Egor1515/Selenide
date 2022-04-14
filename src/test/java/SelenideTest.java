@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -16,8 +15,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class SelenideTest {
-    WebDriver driver;
+    private WebDriver driver;
 
+
+    @Test
     @BeforeAll
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
@@ -25,6 +26,7 @@ public class SelenideTest {
 
     @BeforeEach
     void setupTest() {
+
         driver = new ChromeDriver();
     }
 
@@ -36,7 +38,6 @@ public class SelenideTest {
     }
 
     @Test
-
     public void shouldSendForm1() {
 
         Configuration.holdBrowserOpen = true;
