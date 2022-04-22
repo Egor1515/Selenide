@@ -29,7 +29,7 @@ public class SelenideTest {
         $(".checkbox__box").click();
         $(withText("Забронировать")).click();
         $(".notification__title").should(Condition.visible, Duration.ofSeconds(15));
-        $(".notification__content").should(Condition.visible, Duration.ofSeconds(15));
+        $(".notification__content").shouldHave(Condition.text("Встреча успешно забронирована на " + planningDate), Duration.ofSeconds(15));
 
 
     }
